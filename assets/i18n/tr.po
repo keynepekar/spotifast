@@ -864,6 +864,10 @@ msgstr[1] "{count} MilkDrop hazır ayarı eklendi"
 msgid "Couldn't fetch presets: {error}"
 msgstr "Hazır ayarlar alınamadı: {error}"
 
+#: src/app.rs:13971
+msgid "Downloading MilkDrop preset packs"
+msgstr "MilkDrop hazır ayar paketleri indiriliyor"
+
 #. Translators: {folder} is a folder path and {error} is an error message.
 #: src/app.rs:5026
 #, rust-format
@@ -1175,10 +1179,6 @@ msgstr "{size} MB albüm kapağı temizlendi"
 #, rust-format
 msgid "Couldn't clear artwork: {error}"
 msgstr "Albüm kapakları temizlenemedi: {error}"
-
-#: src/app.rs:13971
-msgid "Downloading MilkDrop preset packs"
-msgstr "MilkDrop hazır ayar paketleri indiriliyor"
 
 #. Translators: {name} is the name of a visualizer preset pack.
 #: src/app.rs:14053
@@ -2609,7 +2609,7 @@ msgstr ""
 msgid ""
 "Spotifast couldn't save or start Soloist because access was denied. Check "
 "your folder permissions or security software and try again."
-msgstr ""
+msgstr "Erişim reddedildiği için Spotifast, Soloist’i kaydedemedi veya başlatamadı. Klasör izinlerini veya güvenlik yazılımını kontrol edip tekrar deneyin."
 
 #: src/soloist/mod.rs:90
 msgid ""
@@ -3610,11 +3610,6 @@ msgstr "Spotify’da önceden kaydet"
 msgid "Track list preview"
 msgstr "Parça listesi önizlemesi"
 
-#: src/ui/prerelease.rs:304
-msgctxt "column"
-msgid "Title"
-msgstr "Başlık"
-
 #: src/ui/prerelease.rs:320
 msgid "Plays"
 msgstr "Dinlenme sayısı"
@@ -4212,6 +4207,10 @@ msgstr ""
 "ihtiyaç duyar ve bu bilgisayar ya da sanal makine bunu sağlamıyor. Grafik "
 "sürücüsünü yükleyin veya sanal makine için GPU hızlandırmayı açın. Daha "
 "fazlasını okumak için {url} açılsın mı?"
+
+#~ msgctxt "column"
+#~ msgid "Title"
+#~ msgstr "Başlık"
 
 #~ msgid "3. Pair once in Spotify"
 #~ msgstr "3. Spotify'da bir kez eşleştirin"

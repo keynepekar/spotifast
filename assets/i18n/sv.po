@@ -862,6 +862,10 @@ msgstr[1] "{count} MilkDrop-förinställningar tillagda"
 msgid "Couldn't fetch presets: {error}"
 msgstr "Kunde inte hämta förinställningar: {error}"
 
+#: src/app.rs:13971
+msgid "Downloading MilkDrop preset packs"
+msgstr "Laddar ned MilkDrop-förinställningspaket"
+
 #. Translators: {folder} is a folder path and {error} is an error message.
 #: src/app.rs:5026
 #, rust-format
@@ -1172,10 +1176,6 @@ msgstr "Rensade {size} MB omslagsbilder"
 #, rust-format
 msgid "Couldn't clear artwork: {error}"
 msgstr "Kunde inte rensa omslagsbilder: {error}"
-
-#: src/app.rs:13971
-msgid "Downloading MilkDrop preset packs"
-msgstr "Laddar ned MilkDrop-förinställningspaket"
 
 #. Translators: {name} is the name of a visualizer preset pack.
 #: src/app.rs:14053
@@ -2579,7 +2579,7 @@ msgstr ""
 msgid ""
 "Spotifast couldn't save or start Soloist because access was denied. Check "
 "your folder permissions or security software and try again."
-msgstr ""
+msgstr "Spotifast kunde inte spara eller starta Soloist eftersom åtkomst nekades. Kontrollera mappens behörigheter eller säkerhetsprogram och försök igen."
 
 #: src/soloist/mod.rs:90
 msgid ""
@@ -3582,11 +3582,6 @@ msgstr "Förspara på Spotify"
 msgid "Track list preview"
 msgstr "Förhandsvisning av låtlista"
 
-#: src/ui/prerelease.rs:304
-msgctxt "column"
-msgid "Title"
-msgstr "Titel"
-
 #: src/ui/prerelease.rs:320
 msgid "Plays"
 msgstr "Spelningar"
@@ -4184,6 +4179,10 @@ msgstr ""
 "här datorn eller virtuella maskinen har ingen. Installera grafikdrivrutinen "
 "eller slå på GPU-acceleration för den virtuella maskinen. Öppna {url} för "
 "att läsa mer?"
+
+#~ msgctxt "column"
+#~ msgid "Title"
+#~ msgstr "Titel"
 
 #~ msgid "3. Pair once in Spotify"
 #~ msgstr "3. Parkoppla en gång i Spotify"

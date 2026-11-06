@@ -867,6 +867,10 @@ msgstr[1] "{count} predefinições do MilkDrop adicionadas"
 msgid "Couldn't fetch presets: {error}"
 msgstr "Não foi possível obter as predefinições: {error}"
 
+#: src/app.rs:13971
+msgid "Downloading MilkDrop preset packs"
+msgstr "A transferir pacotes de predefinições do MilkDrop"
+
 #. Translators: {folder} is a folder path and {error} is an error message.
 #: src/app.rs:5026
 #, rust-format
@@ -1179,10 +1183,6 @@ msgstr "{size} MB de capas apagados"
 #, rust-format
 msgid "Couldn't clear artwork: {error}"
 msgstr "Não foi possível apagar as capas: {error}"
-
-#: src/app.rs:13971
-msgid "Downloading MilkDrop preset packs"
-msgstr "A transferir pacotes de predefinições do MilkDrop"
 
 #. Translators: {name} is the name of a visualizer preset pack.
 #: src/app.rs:14053
@@ -2615,7 +2615,7 @@ msgstr ""
 msgid ""
 "Spotifast couldn't save or start Soloist because access was denied. Check "
 "your folder permissions or security software and try again."
-msgstr ""
+msgstr "O Spotifast não conseguiu guardar ou iniciar o Soloist porque o acesso foi negado. Verifica as permissões da pasta ou o software de segurança e tenta novamente."
 
 #: src/soloist/mod.rs:90
 msgid ""
@@ -3623,11 +3623,6 @@ msgstr "Pré-guardar no Spotify"
 msgid "Track list preview"
 msgstr "Pré-visualização da lista de faixas"
 
-#: src/ui/prerelease.rs:304
-msgctxt "column"
-msgid "Title"
-msgstr "Título"
-
 #: src/ui/prerelease.rs:320
 msgid "Plays"
 msgstr "Reproduções"
@@ -4225,6 +4220,10 @@ msgstr ""
 "recente, e este PC ou máquina virtual não o disponibiliza. Instale o "
 "controlador gráfico ou ative a aceleração por GPU da máquina virtual. Abrir "
 "{url} para saber mais?"
+
+#~ msgctxt "column"
+#~ msgid "Title"
+#~ msgstr "Título"
 
 #~ msgid "3. Pair once in Spotify"
 #~ msgstr "3. Emparelha uma vez no Spotify"

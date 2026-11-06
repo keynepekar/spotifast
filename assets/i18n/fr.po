@@ -866,6 +866,10 @@ msgstr[1] "{count} presets MilkDrop ajoutés"
 msgid "Couldn't fetch presets: {error}"
 msgstr "Impossible de récupérer les presets : {error}"
 
+#: src/app.rs:13971
+msgid "Downloading MilkDrop preset packs"
+msgstr "Téléchargement des packs de presets MilkDrop"
+
 #. Translators: {folder} is a folder path and {error} is an error message.
 #: src/app.rs:5026
 #, rust-format
@@ -1178,10 +1182,6 @@ msgstr "{size} Mo de pochettes effacés"
 #, rust-format
 msgid "Couldn't clear artwork: {error}"
 msgstr "Impossible d’effacer les pochettes : {error}"
-
-#: src/app.rs:13971
-msgid "Downloading MilkDrop preset packs"
-msgstr "Téléchargement des packs de presets MilkDrop"
 
 #. Translators: {name} is the name of a visualizer preset pack.
 #: src/app.rs:14053
@@ -2634,10 +2634,7 @@ msgstr ""
 msgid ""
 "Spotifast couldn't save or start Soloist because access was denied. Check "
 "your folder permissions or security software and try again."
-msgstr ""
-"Spotifast n’a pas pu enregistrer ou démarrer Soloist car l’accès a été "
-"refusé. Vérifiez les autorisations du dossier ou votre logiciel de sécurité, "
-"puis réessayez."
+msgstr "Spotifast n’a pas pu enregistrer ou démarrer Soloist car l’accès a été refusé. Vérifiez les autorisations du dossier ou votre logiciel de sécurité, puis réessayez."
 
 #: src/soloist/mod.rs:90
 msgid ""
@@ -3650,11 +3647,6 @@ msgstr "Préenregistrer sur Spotify"
 msgid "Track list preview"
 msgstr "Aperçu des titres"
 
-#: src/ui/prerelease.rs:304
-msgctxt "column"
-msgid "Title"
-msgstr "Titre"
-
 #: src/ui/prerelease.rs:320
 msgid "Plays"
 msgstr "Écoutes"
@@ -4257,6 +4249,10 @@ msgstr ""
 "ce PC ou cette machine virtuelle n’en fournit pas. Installez le pilote "
 "graphique ou activez l’accélération GPU de la machine virtuelle. Ouvrir "
 "{url} pour en savoir plus ?"
+
+#~ msgctxt "column"
+#~ msgid "Title"
+#~ msgstr "Titre"
 
 #~ msgid "3. Pair once in Spotify"
 #~ msgstr "3. Appairer une fois dans Spotify"

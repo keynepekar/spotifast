@@ -855,6 +855,10 @@ msgstr[0] "MilkDropのプリセットを{count}個追加しました"
 msgid "Couldn't fetch presets: {error}"
 msgstr "プリセットを取得できませんでした：{error}"
 
+#: src/app.rs:13971
+msgid "Downloading MilkDrop preset packs"
+msgstr "MilkDropのプリセットパックをダウンロード中"
+
 #. Translators: {folder} is a folder path and {error} is an error message.
 #: src/app.rs:5026
 #, rust-format
@@ -1164,10 +1168,6 @@ msgstr "アートワークを{size} MB削除しました"
 #, rust-format
 msgid "Couldn't clear artwork: {error}"
 msgstr "アートワークを削除できませんでした：{error}"
-
-#: src/app.rs:13971
-msgid "Downloading MilkDrop preset packs"
-msgstr "MilkDropのプリセットパックをダウンロード中"
 
 #. Translators: {name} is the name of a visualizer preset pack.
 #: src/app.rs:14053
@@ -2594,7 +2594,7 @@ msgstr ""
 msgid ""
 "Spotifast couldn't save or start Soloist because access was denied. Check "
 "your folder permissions or security software and try again."
-msgstr ""
+msgstr "アクセスが拒否されたため、Spotifast は Soloist を保存または起動できませんでした。フォルダーのアクセス許可またはセキュリティソフトを確認して、もう一度お試しください。"
 
 #: src/soloist/mod.rs:90
 msgid ""
@@ -3590,11 +3590,6 @@ msgstr "Spotifyで事前保存"
 msgid "Track list preview"
 msgstr "トラックリストのプレビュー"
 
-#: src/ui/prerelease.rs:304
-msgctxt "column"
-msgid "Title"
-msgstr "タイトル"
-
 #: src/ui/prerelease.rs:320
 msgid "Plays"
 msgstr "再生回数"
@@ -4186,6 +4181,10 @@ msgstr ""
 "この PC または仮想マシンにはありません。グラフィックドライバーをインストール"
 "するか、仮想マシンの GPU アクセラレーションを有効にしてください。詳しくは "
 "{url} を開きますか？"
+
+#~ msgctxt "column"
+#~ msgid "Title"
+#~ msgstr "タイトル"
 
 #~ msgid "3. Pair once in Spotify"
 #~ msgstr "3. Spotifyで初回ペアリング"

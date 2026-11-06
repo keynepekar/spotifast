@@ -848,6 +848,10 @@ msgstr[0] "已添加 {count} 个 MilkDrop 预设"
 msgid "Couldn't fetch presets: {error}"
 msgstr "无法获取预设：{error}"
 
+#: src/app.rs:13971
+msgid "Downloading MilkDrop preset packs"
+msgstr "正在下载 MilkDrop 预设包"
+
 #. Translators: {folder} is a folder path and {error} is an error message.
 #: src/app.rs:5026
 #, rust-format
@@ -1147,10 +1151,6 @@ msgstr "已清除 {size} MB 封面图片"
 #, rust-format
 msgid "Couldn't clear artwork: {error}"
 msgstr "无法清除封面图片：{error}"
-
-#: src/app.rs:13971
-msgid "Downloading MilkDrop preset packs"
-msgstr "正在下载 MilkDrop 预设包"
 
 #. Translators: {name} is the name of a visualizer preset pack.
 #: src/app.rs:14053
@@ -2503,7 +2503,7 @@ msgstr "Spotifast 无法下载 Soloist。请检查连接后重试。"
 msgid ""
 "Spotifast couldn't save or start Soloist because access was denied. Check "
 "your folder permissions or security software and try again."
-msgstr ""
+msgstr "访问被拒绝，Spotifast 无法保存或启动 Soloist。请检查文件夹权限或安全软件，然后重试。"
 
 #: src/soloist/mod.rs:90
 msgid ""
@@ -3472,11 +3472,6 @@ msgstr "在 Spotify 预保存"
 msgid "Track list preview"
 msgstr "曲目列表预览"
 
-#: src/ui/prerelease.rs:304
-msgctxt "column"
-msgid "Title"
-msgstr "标题"
-
 #: src/ui/prerelease.rs:320
 msgid "Plays"
 msgstr "播放次数"
@@ -4061,6 +4056,10 @@ msgstr ""
 "Spotifast 需要支持 OpenGL 2.0 或更高版本的显卡驱动程序，而这台电脑或虚拟机没"
 "有提供。请安装显卡驱动程序，或为虚拟机开启 GPU 加速。要打开 {url} 了解更多"
 "吗？"
+
+#~ msgctxt "column"
+#~ msgid "Title"
+#~ msgstr "标题"
 
 #~ msgid "3. Pair once in Spotify"
 #~ msgstr "3. 在 Spotify 中配对一次"

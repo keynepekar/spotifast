@@ -849,6 +849,10 @@ msgstr[0] "已新增 {count} 個 MilkDrop 預設集"
 msgid "Couldn't fetch presets: {error}"
 msgstr "無法取得預設集：{error}"
 
+#: src/app.rs:13971
+msgid "Downloading MilkDrop preset packs"
+msgstr "正在下載 MilkDrop 預設集套件"
+
 #. Translators: {folder} is a folder path and {error} is an error message.
 #: src/app.rs:5026
 #, rust-format
@@ -1149,10 +1153,6 @@ msgstr "已清除 {size} MB 的封面圖片"
 #, rust-format
 msgid "Couldn't clear artwork: {error}"
 msgstr "無法清除封面圖片：{error}"
-
-#: src/app.rs:13971
-msgid "Downloading MilkDrop preset packs"
-msgstr "正在下載 MilkDrop 預設集套件"
 
 #. Translators: {name} is the name of a visualizer preset pack.
 #: src/app.rs:14053
@@ -2507,7 +2507,7 @@ msgstr "Spotifast 無法下載 Soloist。請檢查連線後再試一次。"
 msgid ""
 "Spotifast couldn't save or start Soloist because access was denied. Check "
 "your folder permissions or security software and try again."
-msgstr ""
+msgstr "存取遭到拒絕，Spotifast 無法儲存或啟動 Soloist。請檢查資料夾權限或安全軟體，然後再試一次。"
 
 #: src/soloist/mod.rs:90
 msgid ""
@@ -3478,11 +3478,6 @@ msgstr "在 Spotify 預先儲存"
 msgid "Track list preview"
 msgstr "曲目清單預覽"
 
-#: src/ui/prerelease.rs:304
-msgctxt "column"
-msgid "Title"
-msgstr "標題"
-
 #: src/ui/prerelease.rs:320
 msgid "Plays"
 msgstr "播放次數"
@@ -4067,6 +4062,10 @@ msgstr ""
 "Spotifast 需要支援 OpenGL 2.0 或更新版本的顯示卡驅動程式，而這台電腦或虛擬機"
 "器沒有提供。請安裝顯示卡驅動程式，或為虛擬機器開啟 GPU 加速。要開啟 {url} 了"
 "解更多嗎？"
+
+#~ msgctxt "column"
+#~ msgid "Title"
+#~ msgstr "標題"
 
 #~ msgid "3. Pair once in Spotify"
 #~ msgstr "3. 在 Spotify 中配對一次"

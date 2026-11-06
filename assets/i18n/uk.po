@@ -872,6 +872,10 @@ msgstr[2] "Додано {count} пресетів MilkDrop"
 msgid "Couldn't fetch presets: {error}"
 msgstr "Не вдалося отримати пресети: {error}"
 
+#: src/app.rs:13971
+msgid "Downloading MilkDrop preset packs"
+msgstr "Завантаження наборів пресетів MilkDrop"
+
 #. Translators: {folder} is a folder path and {error} is an error message.
 #: src/app.rs:5026
 #, rust-format
@@ -1185,10 +1189,6 @@ msgstr "Очищено {size} МБ обкладинок"
 #, rust-format
 msgid "Couldn't clear artwork: {error}"
 msgstr "Не вдалося очистити обкладинки: {error}"
-
-#: src/app.rs:13971
-msgid "Downloading MilkDrop preset packs"
-msgstr "Завантаження наборів пресетів MilkDrop"
 
 #. Translators: {name} is the name of a visualizer preset pack.
 #: src/app.rs:14053
@@ -2624,7 +2624,7 @@ msgstr ""
 msgid ""
 "Spotifast couldn't save or start Soloist because access was denied. Check "
 "your folder permissions or security software and try again."
-msgstr ""
+msgstr "Spotifast не вдалося зберегти або запустити Soloist, оскільки доступ заборонено. Перевірте дозволи папки або захисне програмне забезпечення та спробуйте ще раз."
 
 #: src/soloist/mod.rs:90
 msgid ""
@@ -3636,11 +3636,6 @@ msgstr "Передзберегти у Spotify"
 msgid "Track list preview"
 msgstr "Попередній перегляд треків"
 
-#: src/ui/prerelease.rs:304
-msgctxt "column"
-msgid "Title"
-msgstr "Назва"
-
 #: src/ui/prerelease.rs:320
 msgid "Plays"
 msgstr "Прослуховування"
@@ -4247,6 +4242,10 @@ msgstr ""
 "комп’ютер чи ця віртуальна машина його не надає. Установіть графічний "
 "драйвер або увімкніть GPU-прискорення для віртуальної машини. Відкрити "
 "{url}, щоб дізнатися більше?"
+
+#~ msgctxt "column"
+#~ msgid "Title"
+#~ msgstr "Назва"
 
 #~ msgid "3. Pair once in Spotify"
 #~ msgstr "3. Виконайте сполучення в Spotify один раз"

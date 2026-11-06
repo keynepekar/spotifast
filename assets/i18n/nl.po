@@ -867,6 +867,10 @@ msgstr[1] "{count} MilkDrop-presets toegevoegd"
 msgid "Couldn't fetch presets: {error}"
 msgstr "Kan presets niet ophalen: {error}"
 
+#: src/app.rs:13971
+msgid "Downloading MilkDrop preset packs"
+msgstr "MilkDrop-presetpakketten worden gedownload"
+
 #. Translators: {folder} is a folder path and {error} is an error message.
 #: src/app.rs:5026
 #, rust-format
@@ -1178,10 +1182,6 @@ msgstr "{size} MB aan covers gewist"
 #, rust-format
 msgid "Couldn't clear artwork: {error}"
 msgstr "Kan covers niet wissen: {error}"
-
-#: src/app.rs:13971
-msgid "Downloading MilkDrop preset packs"
-msgstr "MilkDrop-presetpakketten worden gedownload"
 
 #. Translators: {name} is the name of a visualizer preset pack.
 #: src/app.rs:14053
@@ -2609,7 +2609,7 @@ msgstr ""
 msgid ""
 "Spotifast couldn't save or start Soloist because access was denied. Check "
 "your folder permissions or security software and try again."
-msgstr ""
+msgstr "Spotifast kon Soloist niet opslaan of starten omdat de toegang is geweigerd. Controleer de mapmachtigingen of beveiligingssoftware en probeer het opnieuw."
 
 #: src/soloist/mod.rs:90
 msgid ""
@@ -3613,11 +3613,6 @@ msgstr "Vooraf opslaan op Spotify"
 msgid "Track list preview"
 msgstr "Voorbeeld van de tracklijst"
 
-#: src/ui/prerelease.rs:304
-msgctxt "column"
-msgid "Title"
-msgstr "Titel"
-
 #: src/ui/prerelease.rs:320
 msgid "Plays"
 msgstr "Aantal keer afgespeeld"
@@ -4216,6 +4211,10 @@ msgstr ""
 "en deze pc of virtuele machine biedt dat niet. Installeer het grafische "
 "stuurprogramma of zet GPU-versnelling aan voor de virtuele machine. {url} "
 "openen voor meer informatie?"
+
+#~ msgctxt "column"
+#~ msgid "Title"
+#~ msgstr "Titel"
 
 #~ msgid "3. Pair once in Spotify"
 #~ msgstr "3. Eenmalig koppelen in Spotify"
