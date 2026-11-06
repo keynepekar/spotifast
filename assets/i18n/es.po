@@ -2606,6 +2606,12 @@ msgstr ""
 "Spotifast no pudo descargar Soloist. Comprueba tu conexión y vuelve a "
 "intentarlo."
 
+#: src/soloist/mod.rs:95
+msgid ""
+"Spotifast couldn't save or start Soloist because access was denied. Check "
+"your folder permissions or security software and try again."
+msgstr ""
+
 #: src/soloist/mod.rs:90
 msgid ""
 "Soloist stopped while starting. Check your key and this computer's audio "

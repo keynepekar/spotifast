@@ -59,6 +59,10 @@ The remembered setup step lives in `session.json`, separately from playback
 preferences. The headphones badge is Spotifast's playback icon, not a Soloist
 brand mark.
 
+If setup says access was denied while saving or starting Soloist, check the
+permissions on Spotifast's Soloist data folder and any security software that
+may be blocking it, then try again.
+
 Pairing is normally needed only once. Soloist restores its own saved session
 when Spotifast starts. You can still choose another Spotify Connect device.
 Spotifast shows its managed player as **This computer**, with a small Soloist

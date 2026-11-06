@@ -2503,6 +2503,12 @@ msgid ""
 "Spotifast couldn't download Soloist. Check your connection and try again."
 msgstr "Spotifast 無法下載 Soloist。請檢查連線後再試一次。"
 
+#: src/soloist/mod.rs:95
+msgid ""
+"Spotifast couldn't save or start Soloist because access was denied. Check "
+"your folder permissions or security software and try again."
+msgstr ""
+
 #: src/soloist/mod.rs:90
 msgid ""
 "Soloist stopped while starting. Check your key and this computer's audio "

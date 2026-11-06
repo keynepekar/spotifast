@@ -49,6 +49,7 @@ pub enum Failure {
     InvalidKey,
     KeyStore,
     Download,
+    InstallPermission,
     NotReady,
     SlowStart,
     Stopped,
@@ -62,7 +63,11 @@ impl Failure {
     pub fn retries(&self) -> bool {
         !matches!(
             self,
-            Self::Unsupported | Self::InvalidKey | Self::KeyStore | Self::Expired
+            Self::Unsupported
+                | Self::InvalidKey
+                | Self::KeyStore
+                | Self::InstallPermission
+                | Self::Expired
         )
     }
     pub fn message(&self, locale: crate::i18n::Locale) -> Cow<'static, str> {
@@ -84,6 +89,10 @@ impl Failure {
             Self::Download => gettext(
                 locale,
                 "Spotifast couldn't download Soloist. Check your connection and try again.",
+            ),
+            Self::InstallPermission => gettext(
+                locale,
+                "Spotifast couldn't save or start Soloist because access was denied. Check your folder permissions or security software and try again.",
             ),
             Self::NotReady => gettext(
                 locale,
@@ -110,6 +119,15 @@ impl std::fmt::Display for Failure {
     }
 }
 impl std::error::Error for Failure {}
+
+// Local installation errors may already carry a more specific failure.
+fn download_failure(error: anyhow::Error) -> anyhow::Error {
+    if error.downcast_ref::<Failure>().is_some() {
+        error
+    } else {
+        error.context(Failure::Download)
+    }
+}
 
 #[derive(Clone, Debug, Default, PartialEq)]
 pub enum Status {
@@ -293,7 +311,7 @@ async fn run(args: Config, client: Client, mut stopped: watch::Receiver<bool>) -
                 notify(Update::Status(Status::Downloading { received, total }))
             })
             .await
-            .context(Failure::Download)?
+            .map_err(download_failure)?
         };
         Ok::<_, anyhow::Error>(Some((key, root, data, name, build)))
     };
@@ -359,7 +377,7 @@ async fn run(args: Config, client: Client, mut stopped: watch::Receiver<bool>) -
                 };
                 build = tokio::select! {
                     _ = stopped.changed() => return Ok(()),
-                    result = install::download(&root, &http, &progress) => result.context(Failure::Download)?,
+                    result = install::download(&root, &http, &progress) => result.map_err(download_failure)?,
                 };
             }
             Outcome::Expired => bail!(Failure::Expired),

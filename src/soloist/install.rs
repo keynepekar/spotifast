@@ -304,7 +304,7 @@ pub async fn download(
     .await?;
     if let Err(error) = result {
         let _ = tokio::fs::remove_dir_all(&stage).await;
-        return Err(error);
+        return Err(local_install_failure(error));
     }
     let result = async {
         let mut command = tokio::process::Command::new(stage.join(executable()));
@@ -322,7 +322,20 @@ pub async fn download(
         Ok(build)
     }.await;
     let _ = tokio::fs::remove_dir_all(&stage).await;
-    result
+    result.map_err(local_install_failure)
+}
+
+// Only classify errors from local installation steps, not the network request.
+fn local_install_failure(error: anyhow::Error) -> anyhow::Error {
+    if error.chain().any(|cause| {
+        cause
+            .downcast_ref::<std::io::Error>()
+            .is_some_and(|error| error.kind() == std::io::ErrorKind::PermissionDenied)
+    }) {
+        error.context(super::Failure::InstallPermission)
+    } else {
+        error
+    }
 }
 async fn saved_build_matches(build: &Build, root: &Path) -> bool {
     tokio::fs::read(build.path(root))
@@ -333,6 +346,50 @@ async fn saved_build_matches(build: &Build, root: &Path) -> bool {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn local_permission_errors_keep_their_cause_and_get_actionable_failure() {
+        let denied = anyhow::Error::new(std::io::Error::from(std::io::ErrorKind::PermissionDenied))
+            .context("extracting Soloist");
+        let error = super::super::download_failure(local_install_failure(denied));
+        assert_eq!(
+            error.downcast_ref::<super::super::Failure>(),
+            Some(&super::super::Failure::InstallPermission)
+        );
+        assert!(error.chain().any(|cause| {
+            cause
+                .downcast_ref::<std::io::Error>()
+                .is_some_and(|error| error.kind() == std::io::ErrorKind::PermissionDenied)
+        }));
+
+        let other = local_install_failure(anyhow::anyhow!("invalid archive"));
+        let other = super::super::download_failure(other);
+        assert_eq!(
+            other.downcast_ref::<super::super::Failure>(),
+            Some(&super::super::Failure::Download)
+        );
+
+        // An I/O permission error in the network phase is not a file error.
+        let network = super::super::download_failure(
+            std::io::Error::from(std::io::ErrorKind::PermissionDenied).into(),
+        );
+        assert_eq!(
+            network.downcast_ref::<super::super::Failure>(),
+            Some(&super::super::Failure::Download)
+        );
+        assert!(!super::super::Failure::InstallPermission.retries());
+    }
+
+    #[cfg(windows)]
+    #[test]
+    fn windows_access_denied_is_an_install_permission_failure() {
+        let error = local_install_failure(std::io::Error::from_raw_os_error(5).into());
+        assert_eq!(
+            error.downcast_ref::<super::super::Failure>(),
+            Some(&super::super::Failure::InstallPermission)
+        );
+    }
+
     #[test]
     fn platform_matrix_and_expiry_use_build_date() {
         assert!(artifact("macos", "x86_64").is_none());
